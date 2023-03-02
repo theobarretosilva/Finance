@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finance">
         <activity
+            android:name=".SignupPage"
+            android:exported="true" />
+        <activity
+            android:name=".LoginPage"
+            android:exported="true" />
+        <activity
             android:name=".InitialPage"
             android:exported="true" />
         <activity
