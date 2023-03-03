@@ -71,7 +71,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -109,11 +109,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editSenha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -151,11 +151,12 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textSize="21sp"
+        android:onClick="VerificaCampos"
         app:cornerRadius="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editSenha"
         app:layout_constraintVertical_bias="0.0"
         app:strokeColor="@color/black"
         app:strokeWidth="1dp" />
@@ -173,15 +174,32 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkLock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:button="@drawable/ic_outline_lock_24"
         android:buttonTint="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editSenha"
+        app:layout_constraintEnd_toEndOf="@+id/editSenha"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword" />
+        app:layout_constraintStart_toStartOf="@+id/editSenha"
+        app:layout_constraintTop_toTopOf="@+id/editSenha" />
+
+    <TextView
+        android:id="@+id/esqueciSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="35dp"
+        android:text="Esqueci a senha"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:fontFamily="@font/inter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editSenha"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
