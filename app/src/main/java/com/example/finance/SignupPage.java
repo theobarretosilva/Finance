@@ -40,7 +40,26 @@ public class SignupPage extends AppCompatActivity {
     }
 
     public void CheckFilling(View a){
-        
+        if(fullName.getText().length() < 6) {
+            fullName.setError("Preencha seu nome completo corretamente!");
+        } else if(phone.getText().length() != 15) {
+            phone.setError("Preencha o seu nome corretamente");
+        } else if(email.getText().length() < 5) {
+            email.setError("");
+        } else if(!email.getText().toString().contains("@")) {
+            email.setError("");
+        } else if(cpf.getText().length() != 14) {
+            cpf.setError("");
+        } else if(password.getText().length() < 8) {
+            password.setError("");
+        } else if(confirmPassword.getText().length() < 8) {
+            confirmPassword.setError("");
+        } else if(!confirmPassword.getText().toString().equals(password.getText().toString())) {
+            password.setError("");
+            confirmPassword.setError("");
+        } else {
+            RegisterUser();
+        }
     }
 
     private void RegisterUser(){
