@@ -1,5 +1,6 @@
 package com.example.finance;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
@@ -12,6 +13,12 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 
 public class SignupPage extends AppCompatActivity {
 
@@ -43,31 +50,48 @@ public class SignupPage extends AppCompatActivity {
         if(fullName.getText().length() < 6) {
             fullName.setError("Preencha seu nome completo corretamente!");
         } else if(phone.getText().length() != 15) {
-            phone.setError("Preencha o seu nome corretamente");
+            phone.setError("Preencha o seu nome corretamente!");
         } else if(email.getText().length() < 5) {
-            email.setError("");
+            email.setError("Preencha o seu email corretamente!");
         } else if(!email.getText().toString().contains("@")) {
-            email.setError("");
+            email.setError("Você deve informar um email válido!");
         } else if(cpf.getText().length() != 14) {
-            cpf.setError("");
+            cpf.setError("Informe um CPF válido!");
         } else if(password.getText().length() < 8) {
-            password.setError("");
+            password.setError("A senha deve ter no mínimo 8 caracteres!");
         } else if(confirmPassword.getText().length() < 8) {
-            confirmPassword.setError("");
+            confirmPassword.setError("A confirmação da senha deve ter no mínimo 8 caracteres!");
         } else if(!confirmPassword.getText().toString().equals(password.getText().toString())) {
-            password.setError("");
-            confirmPassword.setError("");
+            password.setError("As senhas não estão iguais!");
+            confirmPassword.setError("As senhas não estão iguais!");
         } else {
             RegisterUser();
         }
     }
 
     private void RegisterUser(){
+        String registerEmail = email.getText().toString();
+        String registerPassword = password.getText().toString();
 
+        Firebase.getFirebaseAuth()
+                .createUserWithEmailAndPassword(registerEmail, registerPassword)
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()) {
+                        SendDatabaseUser();
+                    }
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(this, "Não foi possível concluír o seu cadastro, tente novamente mais tarde!", Toast.LENGTH_LONG).show();
+                });
     }
 
     private void SendDatabaseUser(){
+        UserRegistration userRegistration = new UserRegistration();
 
+        userRegistration.setFullName(fullName.getText().toString());
+        userRegistration.setPhone(phone.getText().toString());
+        userRegistration.setEmail(email.getText().toString());
+        userRegistration.setCpf(cpf.getText().toString());
+        userRegistration.setPassword();
     }
 
     public void ShowPassword(View m) {

@@ -22,6 +22,9 @@ public class UserRegistration {
         this.mainPaymentType = mainPaymentType;
     }
 
+    public UserRegistration() {
+    }
+
     public void RegisterUser(){
         Map<String, Object> userData = new HashMap<>();
         userData.put("FullName", fullName);
