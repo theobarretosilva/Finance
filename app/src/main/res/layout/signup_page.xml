@@ -160,10 +160,12 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:fontFamily="@font/arbutus_slab"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telCadastro" />
+        app:layout_constraintTop_toBottomOf="@+id/telCadastro"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/emailCadastro"
@@ -199,10 +201,12 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:fontFamily="@font/arbutus_slab"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailCadastro" />
+        app:layout_constraintTop_toBottomOf="@+id/emailCadastro"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/cpfCadastro"
