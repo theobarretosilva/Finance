@@ -13,6 +13,7 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class SignupPage extends AppCompatActivity {
 
     EditText fullName, phone, email, cpf, password, confirmPassword;
     CheckBox showPassword, showConfirmPassword;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class SignupPage extends AppCompatActivity {
         getSupportActionBar().hide();
 
         StartComponents();
+        FocusChangeListener();
     }
 
     private void StartComponents(){
@@ -44,6 +47,7 @@ public class SignupPage extends AppCompatActivity {
         confirmPassword = findViewById(R.id.confirmSenhaCadastro);
         showPassword = findViewById(R.id.showPass);
         showConfirmPassword = findViewById(R.id.showConfirmPass);
+        progressBar = findViewById(R.id.progressBar);
     }
 
     public void CheckFilling(View a){
@@ -91,7 +95,56 @@ public class SignupPage extends AppCompatActivity {
         userRegistration.setPhone(phone.getText().toString());
         userRegistration.setEmail(email.getText().toString());
         userRegistration.setCpf(cpf.getText().toString());
-        userRegistration.setPassword();
+    }
+
+    private void FocusChangeListener(){
+        fullName.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && fullName.getText().length() > 6) {
+                progressBar.setProgress(10);
+            } else if(hasFocus && fullName.getText().length() == 0) {
+                progressBar.setProgress(0);
+            }
+        });
+
+        phone.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && phone.getText().length() == 15) {
+                progressBar.setProgress(20);
+            } else if(hasFocus && phone.getText().length() == 0) {
+                progressBar.setProgress(10);
+            }
+        });
+
+        email.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && email.getText().length() > 5 && email.getText().toString().contains("@")) {
+                progressBar.setProgress(30);
+            } else if(hasFocus && email.getText().length() == 0) {
+                progressBar.setProgress(20);
+            }
+        });
+
+        cpf.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && ) {
+
+            } else if(hasFocus && ) {
+
+            }
+        });
+
+        password.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && ) {
+
+            } else if(hasFocus && ) {
+
+            }
+        });
+
+        confirmPassword.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus && ) {
+
+            } else if(hasFocus && ) {
+
+            }
+        });
     }
 
     public void ShowPassword(View m) {
