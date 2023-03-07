@@ -123,26 +123,26 @@ public class SignupPage extends AppCompatActivity {
         });
 
         cpf.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus && ) {
-
-            } else if(hasFocus && ) {
-
+            if (!hasFocus && cpf.getText().length() == 14) {
+                progressBar.setProgress(40);
+            } else if(hasFocus && cpf.getText().length() == 0) {
+                progressBar.setProgress(30);
             }
         });
 
         password.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus && ) {
-
-            } else if(hasFocus && ) {
-
+            if (!hasFocus && password.getText().length() > 8) {
+                progressBar.setProgress(50);
+            } else if(hasFocus && password.getText().length() == 0) {
+                progressBar.setProgress(40);
             }
         });
 
         confirmPassword.setOnFocusChangeListener((v, hasFocus) -> {
-            if (!hasFocus && ) {
-
-            } else if(hasFocus && ) {
-
+            if (!hasFocus && confirmPassword.getText().toString().equals(password.getText().toString())) {
+                progressBar.setProgress(60);
+            } else if(hasFocus && confirmPassword.getText().length() == 0) {
+                progressBar.setProgress(50);
             }
         });
     }
