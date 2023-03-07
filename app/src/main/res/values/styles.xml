@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomSpinner" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/inter_light</item>
+        <item name="android:textColorHint">@color/roxo_claro</item>
+        <item name="android:textColor">@color/roxo</item>
+    </style>
+
+</resources>
