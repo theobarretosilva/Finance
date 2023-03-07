@@ -82,6 +82,7 @@ public class SignupPage extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful()) {
                         SendDatabaseUser();
+                        startActivity(new Intent(SignupPage.this, SecondSignupPage.class));
                     }
                 }).addOnFailureListener(e -> {
                     Toast.makeText(this, "Não foi possível concluír o seu cadastro, tente novamente mais tarde!", Toast.LENGTH_LONG).show();

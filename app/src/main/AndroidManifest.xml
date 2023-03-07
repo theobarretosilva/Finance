@@ -10,25 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finance">
         <activity
+            android:name=".SecondSignupPage"
+            android:exported="false" />
+        <activity
             android:name=".MainPage"
-            android:exported="true"
-            android:colorMode="wideColorGamut" />
+            android:colorMode="wideColorGamut"
+            android:exported="true" />
         <activity
             android:name=".SignupPage"
-            android:exported="true"
-            android:colorMode="wideColorGamut" />
+            android:colorMode="wideColorGamut"
+            android:exported="true" />
         <activity
             android:name=".LoginPage"
-            android:exported="true"
-            android:colorMode="wideColorGamut" />
+            android:colorMode="wideColorGamut"
+            android:exported="true" />
         <activity
             android:name=".InitialPage"
-            android:exported="true"
-            android:colorMode="wideColorGamut" />
+            android:colorMode="wideColorGamut"
+            android:exported="true" />
         <activity
             android:name=".SplashPage"
-            android:exported="true"
-            android:colorMode="wideColorGamut" >
+            android:colorMode="wideColorGamut"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
