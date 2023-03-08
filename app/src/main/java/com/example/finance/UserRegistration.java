@@ -9,18 +9,6 @@ public class UserRegistration {
 
     String fullName, phone, email, cpf, password, monthlyExpenses, monthlyPayment, mainExpense, monthlyExpensesGoal;
 
-    public UserRegistration(String fullName, String phone, String email, String cpf, String password, String monthlyExpenses, String monthlyPayment, String mainExpense, String monthlyExpensesGoal) {
-        this.fullName = fullName;
-        this.phone = phone;
-        this.email = email;
-        this.cpf = cpf;
-        this.password = password;
-        this.monthlyExpenses = monthlyExpenses;
-        this.monthlyPayment = monthlyPayment;
-        this.mainExpense = mainExpense;
-        this.monthlyExpensesGoal = monthlyExpensesGoal;
-    }
-
     public UserRegistration() {
     }
 

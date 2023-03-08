@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -42,5 +43,21 @@ public class SecondSignupPage extends AppCompatActivity {
         adapter.setDropDownViewResource(R.layout.spi_dropdown_elemento);
         mainExpense.setAdapter(adapter);
         mainExpense.setSelection(0, true);
+    }
+
+    public void CheckFilling(View g){
+//        if() {
+//
+//        } else if() {
+//
+//        } else if() {
+//
+//        } else if() {
+//
+//        }
+    }
+
+    private void SendFinanceDBUSer(){
+
     }
 }
