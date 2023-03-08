@@ -7,9 +7,9 @@ import java.util.Map;
 
 public class UserRegistration {
 
-    String fullName, phone, email, cpf, password, monthlyExpenses, monthlyPayment, mainExpense, monthlyExpensesGoal, mainPaymentType;
+    String fullName, phone, email, cpf, password, monthlyExpenses, monthlyPayment, mainExpense, monthlyExpensesGoal;
 
-    public UserRegistration(String fullName, String phone, String email, String cpf, String password, String monthlyExpenses, String monthlyPayment, String mainExpense, String monthlyExpensesGoal, String mainPaymentType) {
+    public UserRegistration(String fullName, String phone, String email, String cpf, String password, String monthlyExpenses, String monthlyPayment, String mainExpense, String monthlyExpensesGoal) {
         this.fullName = fullName;
         this.phone = phone;
         this.email = email;
@@ -19,7 +19,6 @@ public class UserRegistration {
         this.monthlyPayment = monthlyPayment;
         this.mainExpense = mainExpense;
         this.monthlyExpensesGoal = monthlyExpensesGoal;
-        this.mainPaymentType = mainPaymentType;
     }
 
     public UserRegistration() {
@@ -45,7 +44,6 @@ public class UserRegistration {
         userFinances.put("MonthlyPayment", monthlyPayment);
         userFinances.put("MainExpense", mainExpense);
         userFinances.put("MonthlyExpensesGoal", monthlyExpensesGoal);
-        userFinances.put("MainPaymentType", mainPaymentType);
 
         DocumentReference dsFinances = Firebase.getFirebaseFirestore()
                 .collection("Users")
@@ -116,12 +114,5 @@ public class UserRegistration {
     }
     public void setMonthlyExpensesGoal(String monthlyExpensesGoal) {
         this.monthlyExpensesGoal = monthlyExpensesGoal;
-    }
-
-    public String getMainPaymentType() {
-        return mainPaymentType;
-    }
-    public void setMainPaymentType(String mainPaymentType) {
-        this.mainPaymentType = mainPaymentType;
     }
 }
