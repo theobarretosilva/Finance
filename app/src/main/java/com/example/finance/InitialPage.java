@@ -22,6 +22,8 @@ public class InitialPage extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.rgb(94,23,235));
         getSupportActionBar().hide();
 
+        startActivity(new Intent(InitialPage.this, SecondSignupPage.class));
+
         titulo2 = findViewById(R.id.titulo2);
         login = findViewById(R.id.btnLogin);
         cadastro = findViewById(R.id.btnCadastro);

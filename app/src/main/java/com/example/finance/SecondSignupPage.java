@@ -41,6 +41,6 @@ public class SecondSignupPage extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spi_elemento, mainExpenses);
         adapter.setDropDownViewResource(R.layout.spi_dropdown_elemento);
         mainExpense.setAdapter(adapter);
-        mainExpense.setSelection(0, false);
+        mainExpense.setSelection(0, true);
     }
 }
