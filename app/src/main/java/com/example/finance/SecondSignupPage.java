@@ -1,7 +1,10 @@
 package com.example.finance;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -59,5 +62,10 @@ public class SecondSignupPage extends AppCompatActivity {
 
     private void SendFinanceDBUSer(){
 
+    }
+
+    public void GoBackScreen(View l){
+        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(), R.anim.fade_in, R.anim.move_right);
+        ActivityCompat.startActivity(SecondSignupPage.this, new Intent(this, SignupPage.class), activityOptionsCompat.toBundle());
     }
 }
