@@ -23,7 +23,8 @@ public class SecondSignupPage extends AppCompatActivity {
             "Alimentação",
             "Contas",
             "Compras parceladas",
-            "Transporte"
+            "Transporte",
+            "Outros"
     };
 
     @Override
@@ -49,15 +50,15 @@ public class SecondSignupPage extends AppCompatActivity {
     }
 
     public void CheckFilling(View g){
-//        if() {
-//
-//        } else if() {
-//
-//        } else if() {
-//
-//        } else if() {
-//
-//        }
+        if(monthlyExpense.getText().length() != ) {
+
+        } else if() {
+
+        } else if() {
+
+        } else if() {
+
+        }
     }
 
     private void SendFinanceDBUSer(){
