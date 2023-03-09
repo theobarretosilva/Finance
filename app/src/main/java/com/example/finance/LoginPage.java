@@ -37,27 +37,27 @@ public class LoginPage extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.rgb(94,23,235));
         getSupportActionBar().hide();
 
-        StartComponents();
+        startComponents();
     }
 
-    private void StartComponents() {
+    private void startComponents() {
         emailLogin = findViewById(R.id.editEmail);
         senhaLogin = findViewById(R.id.editSenha);
         checkLock = findViewById(R.id.checkLock);
         esqueciSenha = findViewById(R.id.esqueciSenha);
     }
 
-    public void CheckFields(View a) {
+    public void checkFields(View a) {
         if (emailLogin.getText().length() < 6) {
             emailLogin.setError("Preencha seu email corretamente!");
         } else if (senhaLogin.getText().length() < 12) {
             senhaLogin.setError("Preencha sua senha corretamente");
         } else {
-            UserAuth(a);
+            userAuth(a);
         }
     }
 
-    public void UserAuth(View a) {
+    public void userAuth(View a) {
         String email = emailLogin.getText().toString();
         String senha = senhaLogin.getText().toString();
 
@@ -80,7 +80,7 @@ public class LoginPage extends AppCompatActivity {
                 });
     }
 
-    public void ShowPassword(View m) {
+    public void showPassword(View m) {
         if (checkLock.isChecked()){
             senhaLogin.setInputType(InputType.TYPE_CLASS_TEXT);
             checkLock.setButtonDrawable(R.drawable.ic_outline_lock_open_24);
@@ -90,17 +90,17 @@ public class LoginPage extends AppCompatActivity {
         }
     }
 
-    public void RecoverPassword(View r){
+    public void recoverPassword(View r){
         String email = emailLogin.getText().toString();
 
         if (email.isEmpty()){
             emailLogin.setError("Você precisa inserir o seu email para recuperar a sua senha");
         }else{
-            SendEmail(email);
+            sendEmail(email);
         }
     }
 
-    private void SendEmail(String email){
+    private void sendEmail(String email){
         Firebase.getFirebaseAuth().sendPasswordResetEmail(email)
                 .addOnSuccessListener(unused ->
                         Toast.makeText(getBaseContext(), "Enviamos uma mensagem para o seu email com um link para redefinir", Toast.LENGTH_LONG).show()
@@ -110,7 +110,7 @@ public class LoginPage extends AppCompatActivity {
                 );
     }
 
-    public void GoBackScreen(View l){
+    public void goBackScreen(View l){
         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(), R.anim.fade_in, R.anim.move_right);
         ActivityCompat.startActivity(LoginPage.this, new Intent(this, InitialPage.class), activityOptionsCompat.toBundle());
     }

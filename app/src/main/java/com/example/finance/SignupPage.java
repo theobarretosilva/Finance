@@ -34,11 +34,11 @@ public class SignupPage extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.rgb(94,23,235));
         getSupportActionBar().hide();
 
-        StartComponents();
-        FocusChangeListener();
+        startComponents();
+        focusChangeListener();
     }
 
-    private void StartComponents(){
+    private void startComponents(){
         fullName = findViewById(R.id.nomeCadastro);
         phone = findViewById(R.id.telCadastro);
         email = findViewById(R.id.emailCadastro);
@@ -50,7 +50,7 @@ public class SignupPage extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
     }
 
-    public void CheckFilling(View a){
+    public void checkFilling(View a){
         if(fullName.getText().length() < 6) {
             fullName.setError("Preencha seu nome completo corretamente!");
         } else if(phone.getText().length() != 15) {
@@ -69,11 +69,11 @@ public class SignupPage extends AppCompatActivity {
             password.setError("As senhas não estão iguais!");
             confirmPassword.setError("As senhas não estão iguais!");
         } else {
-            RegisterUser();
+            registerUser();
         }
     }
 
-    private void RegisterUser(){
+    private void registerUser(){
         String registerEmail = email.getText().toString();
         String registerPassword = password.getText().toString();
 
@@ -81,7 +81,7 @@ public class SignupPage extends AppCompatActivity {
                 .createUserWithEmailAndPassword(registerEmail, registerPassword)
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful()) {
-                        SendDatabaseUser();
+                        sendDatabaseUser();
                         startActivity(new Intent(SignupPage.this, SecondSignupPage.class));
                     }
                 }).addOnFailureListener(e -> {
@@ -89,7 +89,7 @@ public class SignupPage extends AppCompatActivity {
                 });
     }
 
-    private void SendDatabaseUser(){
+    private void sendDatabaseUser(){
         UserRegistration userRegistration = new UserRegistration();
 
         userRegistration.setFullName(fullName.getText().toString());
@@ -98,7 +98,7 @@ public class SignupPage extends AppCompatActivity {
         userRegistration.setCpf(cpf.getText().toString());
     }
 
-    private void FocusChangeListener(){
+    private void focusChangeListener(){
         fullName.setOnFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus && fullName.getText().length() > 6) {
                 progressBar.setProgress(10);
@@ -148,7 +148,7 @@ public class SignupPage extends AppCompatActivity {
         });
     }
 
-    public void ShowPassword(View m) {
+    public void showPassword(View m) {
         if (showPassword.isChecked()){
             password.setInputType(InputType.TYPE_CLASS_TEXT);
             showPassword.setButtonDrawable(R.drawable.ic_outline_lock_open_24);
@@ -158,7 +158,7 @@ public class SignupPage extends AppCompatActivity {
         }
     }
 
-    public void ShowConfirmPassword(View r) {
+    public void showConfirmPassword(View r) {
         if (showConfirmPassword.isChecked()){
             confirmPassword.setInputType(InputType.TYPE_CLASS_TEXT);
             showConfirmPassword.setButtonDrawable(R.drawable.ic_outline_lock_open_24);
@@ -168,7 +168,7 @@ public class SignupPage extends AppCompatActivity {
         }
     }
 
-    public void GoBackScreen(View l){
+    public void goBackScreen(View l){
         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(), R.anim.fade_in, R.anim.move_right);
         ActivityCompat.startActivity(SignupPage.this, new Intent(this, InitialPage.class), activityOptionsCompat.toBundle());
     }

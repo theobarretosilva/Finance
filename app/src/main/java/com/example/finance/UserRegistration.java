@@ -12,7 +12,7 @@ public class UserRegistration {
     public UserRegistration() {
     }
 
-    public void RegisterUser(){
+    public void registerUser(){
         Map<String, Object> userData = new HashMap<>();
         userData.put("FullName", fullName);
         userData.put("Phone", phone);

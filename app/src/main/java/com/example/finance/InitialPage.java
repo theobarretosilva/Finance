@@ -36,10 +36,10 @@ public class InitialPage extends AppCompatActivity {
             startActivity(new Intent(InitialPage.this, SignupPage.class));
         });
 
-        setarUnderline();
+        setUnderline();
     }
 
-    public void setarUnderline() {
+    public void setUnderline() {
         if (Build.VERSION.SDK_INT >= 24)
         {
             titulo2.setText(Html.fromHtml("<u>O seu aplicativo favorito de finanças!</u>",Html.FROM_HTML_MODE_LEGACY));
