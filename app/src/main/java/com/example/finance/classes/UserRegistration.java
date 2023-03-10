@@ -1,5 +1,6 @@
-package com.example.finance;
+package com.example.finance.classes;
 
+import com.example.finance.Firebase;
 import com.google.firebase.firestore.DocumentReference;
 
 import java.util.HashMap;

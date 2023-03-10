@@ -1,9 +1,11 @@
-package com.example.finance;
+package com.example.finance.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+
+import com.example.finance.R;
 
 public class MainPage extends AppCompatActivity {
 

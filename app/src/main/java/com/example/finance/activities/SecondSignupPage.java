@@ -1,4 +1,4 @@
-package com.example.finance;
+package com.example.finance.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -13,6 +13,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.finance.R;
+import com.example.finance.classes.UserRegistration;
 
 public class SecondSignupPage extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.finance;
+package com.example.finance.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.finance.R;
 
 public class InitialPage extends AppCompatActivity {
 

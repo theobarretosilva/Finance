@@ -1,4 +1,4 @@
-package com.example.finance;
+package com.example.finance.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.finance.R;
 
 public class SplashPage extends AppCompatActivity implements Runnable{
 
