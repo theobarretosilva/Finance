@@ -22,4 +22,8 @@ public class AddFragment extends Fragment {
     public static AddFragment newInstance() {
         return new AddFragment();
     }
+
+    public void setInfo(){
+
+    }
 }
