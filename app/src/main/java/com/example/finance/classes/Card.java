@@ -1,13 +1,11 @@
 package com.example.finance.classes;
 
-import java.util.Date;
-
-public class Cards {
+public class Card {
     Boolean credit;
     int finalNumbers;
     String expiringDate, expenses;
 
-    public Cards(Boolean credit, int finalNumbers, String expiringDate, String expenses) {
+    public Card(Boolean credit, int finalNumbers, String expiringDate, String expenses) {
         this.credit = credit;
         this.finalNumbers = finalNumbers;
         this.expiringDate = expiringDate;
